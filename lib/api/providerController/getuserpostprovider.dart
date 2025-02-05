@@ -7,7 +7,7 @@ class Getuserpostprovider extends ChangeNotifier {
   bool isloading = false;
   Getuserobjectmodel? userData;
 
-  Future<void> getUserData(int page) async {
+  Future<void> getUserData(String page) async {
     try {
       isloading = true;
       notifyListeners();

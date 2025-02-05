@@ -8,7 +8,7 @@ class Getusergetxcotrolller extends GetxController {
   var isloading = false.obs;
   var getuserda = Getuserobjectmodel().obs;
 
-  Future<void> fetchGetUserData(int page) async {
+  Future<void> fetchGetUserData(String page) async {
     try {
       isloading.value = true;
       var data = await getuserdata.fetchUserData(page);

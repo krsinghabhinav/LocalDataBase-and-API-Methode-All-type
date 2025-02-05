@@ -14,7 +14,7 @@ class _GetuserprovideruiState extends State<Getuserproviderui> {
   @override
   void initState() {
     Getuserpostprovider getprovider = Provider.of(context, listen: false);
-    getprovider.getUserData(1);
+    getprovider.getUserData("1");
     super.initState();
   }
 
