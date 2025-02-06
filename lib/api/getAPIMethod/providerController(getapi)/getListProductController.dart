@@ -5,13 +5,14 @@ import 'package:sqflitetestdeloacal/api/getAPIMethod/repos(getapi)/getproductLis
 class GetlistproductProviderController extends ChangeNotifier {
   Getproductlistrepo getproductlistrepo = Getproductlistrepo();
   bool isloading = false;
-  List<getProductModel>? productModel=[];
+  List<getProductModel>? productModel = [];
 
   Future<void> getProductContro() async {
     try {
       isloading = true;
       notifyListeners();
       productModel = await getproductlistrepo.getProductRepo();
+      print("productModel== $getproductlistrepo");
       isloading = false;
       notifyListeners();
     } on Exception catch (e) {
