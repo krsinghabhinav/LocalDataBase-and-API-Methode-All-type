@@ -45,11 +45,11 @@ class _DeleteGetxdataUiState extends State<DeleteGetxdataUi> {
                   child: ListTile(
                     title: const Text("Job Deleted"),
                     subtitle: Text(
-                      "ID: ${controller.deleteModel.value!.id}\n"
-                      "Title: ${controller.deleteModel.value!.title}\n"
-                      "Price: ${controller.deleteModel.value!.price}\n"
-                      "Rating: ${controller.deleteModel.value!.rating}\n"
-                      "Description: ${controller.deleteModel.value!.description}",
+                      "ID: ${controller.deleteModel.value.id}\n"
+                      "Title: ${controller.deleteModel.value.title}\n"
+                      "Price: ${controller.deleteModel.value.price}\n"
+                      "Rating: ${controller.deleteModel.value.rating}\n"
+                      "Description: ${controller.deleteModel.value.description}",
                     ),
                   ),
                 );
