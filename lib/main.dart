@@ -2,6 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
+import 'api/deleteAPIMethod/delete_Provider/delete_providerController.dart';
+import 'api/deleteAPIMethod/delete_Provider/delete_providerControllerM111.dart';
+import 'api/deleteAPIMethod/delete_Provider_UI/delete_provider_UI.dart';
+import 'api/deleteAPIMethod/delete_Provider_UI/delete_provider_m1111_ui.dart';
+import 'api/deleteAPIMethod/delete_getx_ui/delete_getXdata_UI.dart';
 import 'api/getAPIMethod/getxUi(getapi)/getProductListui.dart';
 import 'api/getAPIMethod/getxUi(getapi)/getUserGetxUI.dart';
 import 'api/getAPIMethod/providerController(getapi)/getListProductController.dart';
@@ -40,6 +45,8 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(
             create: (_) => PostapicreateWithoutModelprovider()),
         ChangeNotifierProvider(create: (_) => PutapiProvidercontroller()),
+        ChangeNotifierProvider(create: (_) => DeleteProvidercontroller()),
+        ChangeNotifierProvider(create: (_) => DeleProviderControllerM1111()),
       ],
       child: GetMaterialApp(
         title: 'Flutter Demo',
@@ -47,7 +54,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: PutPetchGetxUi(),
+        home: DeleteGetxdataUi(),
       ),
     );
   }
