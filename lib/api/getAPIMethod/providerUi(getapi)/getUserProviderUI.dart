@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../providerController/getuserpostprovider.dart';
+import '../providerController(getapi)/getuserpostprovider.dart';
 
 class Getuserproviderui extends StatefulWidget {
   const Getuserproviderui({super.key});

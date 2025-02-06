@@ -68,7 +68,7 @@
 // }
 
 import 'package:flutter/material.dart';
-import 'package:sqflitetestdeloacal/api/model/getuserobjectModel.dart';
+import 'package:sqflitetestdeloacal/api/getAPIMethod/model(getapi)/getuserobjectModel.dart';
 
 import 'ApiServices.dart';
 

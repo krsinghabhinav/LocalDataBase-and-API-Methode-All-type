@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:sqflitetestdeloacal/api/model/getuserobjectModel.dart';
+import 'package:sqflitetestdeloacal/api/getAPIMethod/model(getapi)/getuserobjectModel.dart';
 
-import '../repos/getrepo.dart';
+import '../repos(getapi)/getUserObjectrepo.dart';
 
 class Getusergetxcotrolller extends GetxController {
   GetUserDataRepo getuserdata = GetUserDataRepo();

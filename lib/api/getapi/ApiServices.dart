@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:sqflitetestdeloacal/api/model/getuserobjectModel.dart';
+import 'package:sqflitetestdeloacal/api/getAPIMethod/model(getapi)/getuserobjectModel.dart';
 import 'package:http/http.dart' as http;
 
 class ApiServices {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../getxController/getUserGetxCotrolller.dart'; // Update import
+import '../getxController(getapi)/getUserGetxCotrolller.dart'; // Update import
 
 class Getusergetxui extends StatefulWidget {
   const Getusergetxui({super.key});

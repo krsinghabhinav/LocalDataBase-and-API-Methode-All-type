@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../model/getuserobjectModel.dart';
-import '../repos/getrepo.dart';
+import '../model(getapi)/getuserobjectModel.dart';
+import '../repos(getapi)/getUserObjectrepo.dart';
 
 class Getuserpostprovider extends ChangeNotifier {
   GetUserDataRepo getrepo = GetUserDataRepo();
