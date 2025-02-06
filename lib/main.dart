@@ -16,6 +16,9 @@ import 'api/postAPIMethod/getxApiUI(postapi)/PostapicreatejobuiGetx.dart';
 import 'api/postAPIMethod/postApiUi(postapi)/postCreatejobuiM2.dart';
 import 'api/postAPIMethod/postApiUi(postapi)/postcreatejobuiWithoutModelUI.dart';
 import 'api/postAPIMethod/postApiUi(postapi)/postsendjobui.dart';
+import 'api/put_petch_API_Method/putpetch_Getx_UI/put_petch_Getx_UI.dart';
+import 'api/put_petch_API_Method/putpetch_Provider_ui/put_petch_createjob_UI.dart';
+import 'api/put_petch_API_Method/putpetch_provider/putapi_ProviderController.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,7 +37,9 @@ class MyApp extends StatelessWidget {
             create: (_) => GetlistproductProviderController()),
         ChangeNotifierProvider(create: (_) => GetproductwithoutmodelProvider()),
         ChangeNotifierProvider(create: (_) => Postapicreateprovider()),
-        ChangeNotifierProvider(create: (_) => PostapicreateWithoutModelprovider()),
+        ChangeNotifierProvider(
+            create: (_) => PostapicreateWithoutModelprovider()),
+        ChangeNotifierProvider(create: (_) => PutapiProvidercontroller()),
       ],
       child: GetMaterialApp(
         title: 'Flutter Demo',
@@ -42,7 +47,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: PostapicreatejobuiGetx(),
+        home: PutPetchGetxUi(),
       ),
     );
   }

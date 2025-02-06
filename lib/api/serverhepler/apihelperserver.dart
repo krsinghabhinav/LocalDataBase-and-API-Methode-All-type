@@ -41,7 +41,68 @@ class Apihelperserver {
     }
   }
 
- // Unified response handler
+  // PUT API Request
+  Future<dynamic> putAPI(String url, Object? requestBody) async {
+    try {
+      final response = await http.put(
+        Uri.parse(url),
+        headers: {
+          "Content-Type": "application/json",
+          // "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...", // Uncomment if needed
+        },
+        body: jsonEncode(requestBody),
+      );
+      print("PUT Request - URL: $url");
+      print("Response Status Code: ${response.statusCode}");
+      print("Response Body: ${response.body}");
+
+      return _returnResponse(response);
+    } catch (e) {
+      return {"error": "Failed to put data", "message": e.toString()};
+    }
+  }
+
+//the process are put and patch  same
+  // PATCH API Request (Partial Update)
+  Future<dynamic> patchAPI(String url, Object? requestBody) async {
+    try {
+      final response = await http.patch(
+        Uri.parse(url),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: jsonEncode(requestBody),
+      );
+      print("PATCH Request - URL: $url");
+      print("Response Status Code: ${response.statusCode}");
+      print("Response Body: ${response.body}");
+
+      return _returnResponse(response);
+    } catch (e) {
+      return {"error": "Failed to patch data", "message": e.toString()};
+    }
+  }
+
+  // ✅ DELETE API Request (Newly Added)
+  Future<dynamic> deleteAPI(String url) async {
+    try {
+      final response = await http.delete(
+        Uri.parse(url),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      );
+      print("DELETE Request - URL: $url");
+      print("Response Status Code: ${response.statusCode}");
+      print("Response Body: ${response.body}");
+
+      return _returnResponse(response);
+    } catch (e) {
+      return {"error": "Failed to delete data", "message": e.toString()};
+    }
+  }
+
+  // Unified response handler
   dynamic _returnResponse(http.Response response) {
     try {
       switch (response.statusCode) {
@@ -55,7 +116,11 @@ class Apihelperserver {
         case 500:
           return {"error": "Internal server error", "message": response.body};
         default:
-          return {"error": "Unexpected error", "code": response.statusCode, "message": response.body};
+          return {
+            "error": "Unexpected error",
+            "code": response.statusCode,
+            "message": response.body
+          };
       }
     } catch (e) {
       return {"error": "Failed to parse response", "message": e.toString()};
