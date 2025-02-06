@@ -55,7 +55,7 @@ class _GetproductwithouthmodeluiState extends State<Getproductwithouthmodelui> {
                             itemCount: (fetchdata['images'] as List).length,
                             itemBuilder: (context, imgIndex) {
                               return Padding(
-                                padding:
+                                padding:  
                                     const EdgeInsets.symmetric(horizontal: 4.0),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(8),
