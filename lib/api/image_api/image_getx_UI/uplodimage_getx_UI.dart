@@ -42,7 +42,7 @@ class _UplodimageGetxUiState extends State<UplodimageGetxUi> {
                     child: Image.file(
                       File(controller
                           .selectedImage.value!.path), // Convert XFile to File
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                       width: double.infinity,
                       height: double.infinity,
                     ),
