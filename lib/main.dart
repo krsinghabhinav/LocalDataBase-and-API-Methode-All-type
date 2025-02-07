@@ -15,6 +15,9 @@ import 'api/getAPIMethod/providerController(getapi)/getuserpostprovider.dart';
 import 'api/getAPIMethod/providerUi(getapi)/getListProductProviderUi.dart';
 import 'api/getAPIMethod/providerUi(getapi)/getUserProviderUI.dart';
 import 'api/getAPIMethod/providerUi(getapi)/getproductWithouthModelUi.dart';
+import 'api/image_api/image_getx_UI/uplodimage_getx_UI.dart';
+import 'api/image_api/image_provider/image_provider_controller.dart';
+import 'api/image_api/imageapi_provider_UI/image_api_provider_ui.dart';
 import 'api/postAPIMethod/ProviderController(postapi)/PostapiCreateProvider.dart';
 import 'api/postAPIMethod/ProviderController(postapi)/postapicreateproviderwithoutmodel.dart';
 import 'api/postAPIMethod/getxApiUI(postapi)/PostapicreatejobuiGetx.dart';
@@ -47,6 +50,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => PutapiProvidercontroller()),
         ChangeNotifierProvider(create: (_) => DeleteProvidercontroller()),
         ChangeNotifierProvider(create: (_) => DeleProviderControllerM1111()),
+        ChangeNotifierProvider(create: (_) => ImageProviderController()),
       ],
       child: GetMaterialApp(
         title: 'Flutter Demo',
@@ -54,7 +58,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: DeleteGetxdataUi(),
+        home: UplodimageGetxUi(),
       ),
     );
   }

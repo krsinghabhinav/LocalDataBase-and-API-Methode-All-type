@@ -1,5 +1,7 @@
 import 'dart:convert';
+import 'dart:io';
 import 'package:http/http.dart' as http;
+import 'package:http/http.dart';
 
 class Apihelperserver {
   Future<dynamic> getAPI(String url) async {
@@ -101,6 +103,34 @@ class Apihelperserver {
       return {"error": "Failed to delete data", "message": e.toString()};
     }
   }
+
+   Future<dynamic> uploadImage(File imageFile, String url) async {
+    try {
+      var request = http.MultipartRequest('POST', Uri.parse(url));
+      request.headers.addAll({"Content-Type": "multipart/form-data"});
+      
+      request.files.add(
+        await http.MultipartFile.fromPath(
+          'file',  // Change 'file' if the API expects a different key
+          imageFile.path,
+          filename: imageFile.path.split('/').last,
+        ),
+      );
+
+      // Send the request
+      var streamedResponse = await request.send();
+      var response = await http.Response.fromStream(streamedResponse);
+
+      print("UPLOAD Image - URL: $url");
+      print("Response Status Code: ${response.statusCode}");
+      print("Response Body: ${response.body}");
+
+      return _returnResponse(response);
+    } catch (e) {
+      return {"error": "Failed to upload image", "message": e.toString()};
+    }
+  }
+
 
   // Unified response handler
   dynamic _returnResponse(http.Response response) {

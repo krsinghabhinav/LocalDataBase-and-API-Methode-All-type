@@ -4,4 +4,5 @@ class Baseapiurl {
   static final postCreateJobturl = "https://reqres.in/api/users";
   static final putUrl = "https://reqres.in/api/users/";
   static final deleteUrl = "https://fakestoreapi.com/products/";
+  static final uplodimageUrl = "https://api.escuelajs.co/api/v1/files/upload";
 }
