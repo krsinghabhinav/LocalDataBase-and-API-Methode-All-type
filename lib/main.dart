@@ -4,29 +4,23 @@ import 'package:get/get.dart';
 
 import 'api/deleteAPIMethod/delete_Provider/delete_providerController.dart';
 import 'api/deleteAPIMethod/delete_Provider/delete_providerControllerM111.dart';
-import 'api/deleteAPIMethod/delete_Provider_UI/delete_provider_UI.dart';
-import 'api/deleteAPIMethod/delete_Provider_UI/delete_provider_m1111_ui.dart';
-import 'api/deleteAPIMethod/delete_getx_ui/delete_getXdata_UI.dart';
-import 'api/getAPIMethod/getxUi(getapi)/getProductListui.dart';
-import 'api/getAPIMethod/getxUi(getapi)/getUserGetxUI.dart';
+
 import 'api/getAPIMethod/providerController(getapi)/getListProductController.dart';
 import 'api/getAPIMethod/providerController(getapi)/getproductWithoutmodel.dart';
 import 'api/getAPIMethod/providerController(getapi)/getuserpostprovider.dart';
-import 'api/getAPIMethod/providerUi(getapi)/getListProductProviderUi.dart';
-import 'api/getAPIMethod/providerUi(getapi)/getUserProviderUI.dart';
-import 'api/getAPIMethod/providerUi(getapi)/getproductWithouthModelUi.dart';
-import 'api/image_api/image_getx_UI/uplodimage_getx_UI.dart';
+
 import 'api/image_api/image_provider/image_provider_controller.dart';
-import 'api/image_api/imageapi_provider_UI/image_api_provider_ui.dart';
 import 'api/postAPIMethod/ProviderController(postapi)/PostapiCreateProvider.dart';
 import 'api/postAPIMethod/ProviderController(postapi)/postapicreateproviderwithoutmodel.dart';
-import 'api/postAPIMethod/getxApiUI(postapi)/PostapicreatejobuiGetx.dart';
-import 'api/postAPIMethod/postApiUi(postapi)/postCreatejobuiM2.dart';
-import 'api/postAPIMethod/postApiUi(postapi)/postcreatejobuiWithoutModelUI.dart';
-import 'api/postAPIMethod/postApiUi(postapi)/postsendjobui.dart';
-import 'api/put_petch_API_Method/putpetch_Getx_UI/put_petch_Getx_UI.dart';
-import 'api/put_petch_API_Method/putpetch_Provider_ui/put_petch_createjob_UI.dart';
+
 import 'api/put_petch_API_Method/putpetch_provider/putapi_ProviderController.dart';
+
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+import 'currentLocation.dart';
+import 'languange_localization.dart/change_lanuage.dart';
+import 'languange_localization.dart/provider_controller.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +29,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -51,14 +44,32 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => DeleteProvidercontroller()),
         ChangeNotifierProvider(create: (_) => DeleProviderControllerM1111()),
         ChangeNotifierProvider(create: (_) => ImageProviderController()),
+        ChangeNotifierProvider(create: (_) => ProviderController()),
       ],
-      child: GetMaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: UplodimageGetxUi(),
+      child: Consumer<ProviderController>(
+        builder: (BuildContext context, providerController, Widget? child) {
+          return GetMaterialApp(
+            locale: providerController.locale ??
+                const Locale("en"), // Set the saved locale
+            supportedLocales: const [
+              Locale('en'), // English
+              Locale('es'), // Spanish
+              Locale('hi'), // Hindi
+            ],
+            localizationsDelegates: const [
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+              useMaterial3: true,
+            ),
+            home: LocationScreen(),
+          );
+        },
       ),
     );
   }

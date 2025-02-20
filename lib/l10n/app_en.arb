@@ -1,0 +1,33 @@
+{
+    "helloWorld": "Hello World!",
+    "@helloWorld": {
+      "description": "The conventional newborn programmer greeting"
+    },
+    "greeting": "Good Morning!",
+    "farewell": "Goodbye!",
+    "welcomeMessage": "Welcome to our app",
+    "loadingMessage": "Loading, please wait...",
+    "errorOccurred": "An error occurred. Please try again.",
+    "userProfile": "User Profile",
+    "settings": "Settings",
+    "saveButton": "Save Changes",
+    "logoutButton": "Log Out",
+    "confirmLogout": "Are you sure you want to log out?",
+    "yesButton": "Yes",
+    "noButton": "No",
+    "networkError": "No internet connection. Please check your network.",
+    "retryButton": "Retry",
+    "dateFormat": "MM/dd/yyyy",
+    "timeFormat": "hh:mm a",
+    "notification": "You have new notifications",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "language": "Language",
+    "updateAvailable": "A new update is available!",
+    "downloadUpdate": "Download Now",
+    "cancelButton": "Cancel",
+    "deleteAccount": "Delete Account",
+    "confirmDelete": "Are you sure you want to delete your account? This action cannot be undone."
+  }
+  
+  

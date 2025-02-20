@@ -1,0 +1,34 @@
+
+{
+    "helloWorld": "¡Hola Mundo!",
+    "@helloWorld": {
+      "description": "El saludo convencional de un programador principiante"
+    },
+    "greeting": "¡Buenos días!",
+    "farewell": "¡Adiós!",
+    "welcomeMessage": "Bienvenido a nuestra aplicación",
+    "loadingMessage": "Cargando, por favor espere...",
+    "errorOccurred": "Ocurrió un error. Por favor, intente de nuevo.",
+    "userProfile": "Perfil del usuario",
+    "settings": "Configuraciones",
+    "saveButton": "Guardar cambios",
+    "logoutButton": "Cerrar sesión",
+    "confirmLogout": "¿Está seguro de que desea cerrar sesión?",
+    "yesButton": "Sí",
+    "noButton": "No",
+    "networkError": "Sin conexión a internet. Por favor, revise su red.",
+    "retryButton": "Reintentar",
+    "dateFormat": "dd/MM/yyyy",
+    "timeFormat": "HH:mm",
+    "notification": "Tienes nuevas notificaciones",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro",
+    "language": "Idioma",
+    "updateAvailable": "¡Hay una nueva actualización disponible!",
+    "downloadUpdate": "Descargar ahora",
+    "cancelButton": "Cancelar",
+    "deleteAccount": "Eliminar cuenta",
+    "confirmDelete": "¿Está seguro de que desea eliminar su cuenta? Esta acción no se puede deshacer."
+  }
+  
+  
